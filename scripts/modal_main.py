@@ -191,8 +191,11 @@ def flask_app():
         path = os.path.join(path, hall)
         path += ".txt"
 
-        with open(path, "r") as file:
-            lines = file.readlines()
+        try:
+            with open(path, "r") as file:
+                lines = file.readlines()
+        except:
+            continue
         
         name = hall
         
